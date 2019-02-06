@@ -3,4 +3,6 @@ comment0.target=Main
 comment0.text=\n\ Write\ a\ description\ of\ class\ Main\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=Main()
-numComments=2
+comment2.params=answer
+comment2.target=int\ guessMatch(int)
+numComments=3

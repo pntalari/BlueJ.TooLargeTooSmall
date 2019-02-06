@@ -8,6 +8,53 @@ import java.util.Random;
  */
 public class Main
 {
+    //instance variables
+    int input;
+    int answer;
+    int guessCount = 1;
+    int previousInput;
+    
+    //main method
+    public Main()
+    {
+        Random random = new Random();
+        int answer = random.nextInt(20);
+
+        guessCount = guessMatch(answer);
+        
+        System.out.println("You have guessed " + guessCount + " times");
+    }
+    //Guess method
+    public int guessMatch(int answer)
+    {
+       Scanner read = new Scanner(System.in);
+       System.out.println("Please enter a number in range of 1-20: ");
+       input = read.nextInt();
+        
+        while (input != answer)
+        {
+           if (input < 1 || input > 20)
+           {System.out.println("Your input is invalid, please enter within range 1-20");}
+           
+           else if(input > answer)
+           {System.out.println("Your number is too high");}
+           
+           else if(input < answer)
+           {System.out.println("Your number is too low");}
+
+           if (previousInput != input)
+           { guessCount++;}
+           
+           previousInput = input;
+           input = read.nextInt();
+        }
+        
+        System.out.println("Your guessed number matches, great job!");
+        return guessCount;
+    }
+   
+}    
+    /* working Code
     private int x;
     int guesscnt = 1;
     int inputPrev = 0;
@@ -49,11 +96,4 @@ public class Main
        System.out.println("Your number matches perfectly, great job!");
        System.out.println("You have guessed: " + guesscnt + " times");  
     }
-
-    /*public int guessGame(int input)
-    {
-
-        return guesscnt;
-
-    }*/
-}
+*/
